@@ -1,0 +1,184 @@
+\documentclass[a4paper, 12pt]{article}
+
+%  PREAMBULĖ
+% ------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}            % naudojama, kai .tex failas UTF-8 koduotės
+\usepackage[T1]{fontenc}
+\usepackage[L7x]{fontenc}              % nurodoma lietuviško teksto koduotė Latin-7
+\usepackage[english]{babel}
+\usepackage{microtype}                 % optimizuojami atstumai tarp raidžių žodyje
+\usepackage{indentfirst}               % atitraukiama pirmoji naujo skyriaus eilutė
+\setlength{\parindent}{1.27cm}
+\setlength{\parskip}{0pt}
+\usepackage{icomma}                    % po kablelio skaičiaus viduryje nebus tarpo
+\usepackage{amsmath, amssymb}  % matematiniai simboliai ir konstrukcijos
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{graphicx}                  % grafinių failų įterpimas ir kiti nustatymai
+\usepackage{booktabs}                  % reikalingas tvarkingoms lentelėms sudaryti
+\usepackage{caption}                   % paveiksliukų ir lentelių užrašų formavimas
+\usepackage{geometry}                  % paraščių ir kitų lapo parametrų nustatymai
+\usepackage{hyperref}                  % interaktyvioms nuorodoms dokumente sukurti
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{blindtext}
+\usepackage[
+    backend=biber,
+    style=apa,
+    sortcites=true,
+    sorting=nyt,
+    maxcitenames=3,
+    mincitenames=1
+]{biblatex}
+\DeclareLanguageMapping{english}{english-apa}
+\addbibresource{source.bib}
+\usepackage[acronym]{glossaries}
+\usepackage{longtable}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[toc,page,title]{appendix}
+\usetikzlibrary{positioning}
+\usepackage{tocloft}
+\newlistof{loa}{exp}{List of Appendices}
+\newcommand{\appendixtitle}[2]{
+  \refstepcounter{loa}
+  \addcontentsline{exp}{loa}{\protect\numberline{\theloa}#1}
+  \noindent\textbf{#2}
+  \vspace{0.5em}
+}
+\makeatletter
+\renewcommand{\listofloa}{
+  \begingroup
+  \let\clearpage\relax
+  \section*{List of Appendices}
+  \@starttoc{exp}
+  \endgroup
+}
+\makeatother
+\geometry{      left = 2.5cm,          % paketo geometry parametrų nustatymai
+               right = 2.0cm, 
+                 top = 2.0cm, 
+              bottom = 2.0cm
+}
+
+\captionsetup{format = hang,           % paketo caption parametrų nustatymai
+           labelfont = bf,
+           labelsep = period,
+           tablename = Table,
+          figurename = Figure
+}
+
+\hypersetup{ unicode = true,           % paketo hyperref parametrų nustatymai
+         linktocpage = false, 
+          colorlinks = true, 
+           linkcolor = black,
+           citecolor = blue,
+            pdftitle = {VGTU FMF MKDf bakalaurinio darbo šablonas},
+           pdfauthor = {Mindaugas Kazlavickas}
+}
+
+% PAPILDOMI PAKETAI IR NUSTATYMAI ----------------------------------------------
+
+\usepackage{titlesec}                  % leidžia keisti skyriaus pavadinimo stilių
+\titlelabel{\thetitle.\quad}           % dedamas taškas po skyriaus numeriu tekste
+
+\titleformat{\section}
+  {\bfseries\Large}
+  {\thesection.}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\bfseries\normalsize}
+  {\thesubsection.}
+  {1em}
+  {}
+
+\titleformat{\subsubsection}
+  {\normalsize\itshape}
+  {\thesubsubsection.}
+  {1em}
+  {}
+\let\tocnumdot\numberline              % uždeda tašką po skyriaus numeriu turinyje
+\def\numberline#1{\tocnumdot{#1.}}     
+
+\usepackage{setspace}
+\onehalfspacing
+
+\graphicspath{{figures/}}              % nustatome kelią iki paveiksliukų katalogo 
+
+% ------------------------------------------------------------------------------
+%  SUTRUMPINIMAI
+\newacronym{sdt}{SDT}{Self-Determination-Theory}
+\newacronym{vr}{VR}{Virtual Reality}
+\newacronym{mda}{MDA}{Mechanics, Dynamics and Aesthetics (Framework)}
+\newacronym{lms}{LMS}{Learning Management System}
+\newacronym{fbm}{FBM}{Fogg's Behaviour Model}
+\newacronym{cta}{CTA}{Call-To-Action}
+\newacronym{svg}{SVG}{Scalable Vector Graphics}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{api}{API}{Application Programming Interface}
+\makeglossaries
+
+\newcommand{\progresscalc}[2]{%
+  \begin{equation}
+  \text{Progress} = \frac{#1}{#2} \times 100\%%
+  \end{equation}
+}
+% ------------------------------------------------------------------------------
+%  DOKUMENTO PRADŽIA
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------ VIRŠELIS --
+\input{Sections/First_Title}
+\newpage
+\input{Sections/Second_title}
+\newpage
+% ------------------------------------------------------------------ TITULINIS --
+%
+\input{Sections/Task}
+\newpage
+%
+\input{Sections/Integrity}
+\newpage
+%
+\printglossary[type=acronym, title={List of Abbreviations}] % Abbreviations
+\newpage
+\tableofcontents    % Table of Contents
+\newpage
+\listoftables       % Tables
+\newpage
+\listoffigures      % Figures
+\newpage
+\clearpage
+\listofloa          % Appendices
+\newpage
+%
+\input{Sections/1_Introduction}
+\newpage
+\input{Sections/2_Literature}
+\newpage
+\input{Sections/3_Technologies}
+\newpage
+\input{Sections/4_Implementation}
+\newpage
+\input{Sections/5_Analysis}
+\newpage
+\input{Sections/6_Conclusion}
+% ------------------------------------------------------------------- SKYRIUS --
+% ------------------------------------------------------------------- IŠVADOS --
+%\section*{CONCLUSIONS}
+%\phantomsection
+%\addcontentsline{toc}{section}{CONCLUSIONS}
+%
+\addcontentsline{toc}{section}{REFERENCES}
+\printbibliography[title=REFERENCES]
+\newpage
+\input{Sections/Appendix}
+\end{document}
+% ------------------------------------------------------------------------------
+%  DOKUMENTO PABAIGA
+% ------------------------------------------------------------------------------
