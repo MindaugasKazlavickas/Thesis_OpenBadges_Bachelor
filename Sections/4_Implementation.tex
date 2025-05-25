@@ -9,7 +9,7 @@ The following are the outline of the main design steps taken throughout the proj
 
 \subsection{Layout Decisions}
 In the early design phase of the gamified educational website low-fidelity wireframe designs were created to explore potential layout logic, user interaction flow and screen constraints, specifically for a mobile-first layout. 
-These initial prototypes were developed using primarily digital mockups via the tool Figma, such as the one shown in \ref {fig:mockups}, which represents a series of mobile screen layouts for each gamified task stage. 
+These initial prototypes were developed using primarily digital mockups via the tool Figma, such as the one shown in Figure \ref {fig:mockups}, which represents a series of mobile screen layouts for each gamified task stage. 
 Wireframes played a crucial role in identifying key user interface (UI) elements, narrative progression, and functional zones for gamified interaction.
 
 \begin{figure}[H]
@@ -32,9 +32,6 @@ Wireframes played a crucial role in identifying key user interface (UI) elements
   \label{fig:mockups}
   {\raggedright \small{Source:} created by the author\par}
 \end{figure}
-
-Early in the design stage, the usage of Phaser 3 for a game experience within the website was left behind, due to the concerns that it could stigmatise Open Badges by associating them with video games. 
-After an in-depth discussion with the supervisor, to avoid this stigma, Phaser 3 segments have been entirely cut from the project.
 
 The overall layout of the gamified website was designed to support focused, step-by-step learning with minimal distraction. 
 Some of the decisions were due to technical reasons; others, like a one-page structure, were product requirements specified by the supervisor.
@@ -94,6 +91,52 @@ These design elements help distinguish between active, passive, and reactive int
 Finally, the visual hierarchy of the system is intentionally kept thin. 
 Task screens aim to present no more than two or three levels of importance at any time (e.g., a task prompt and an interaction area, optional tooltip). 
 This supports cognitive load minimisation and aligns with pedagogical priorities, critical in gamified learning contexts where distraction can reduce instructional effectiveness (\cite{reduceDistraction}).
+
+\subsection{Technology Stack Overview}
+
+The development of the gamified educational website required a diverse set of technologies to support both frontend interactivity and backend functionality. 
+Table \ref{tab:tech_stack} outlines the key technologies and their specific roles in the system.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\caption{Overview of technologies used in the project}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Area} & \textbf{Technology} & \textbf{Purpose} \\
+\hline
+Frontend & React.js, HTML5, CSS3 & Build dynamic, modular UI and structured content layout. \\
+\hline
+Styling & CSS Modules & Responsive design and visual layout styling. \\
+\hline
+Animation & Framer Motion, SVG, Adobe AE & Provide animated transitions, scroll-based interactivity and a complex animation. \\
+\hline
+State Storage & LocalStorage & Store progress, score, and preferences(i.e. language choice) client-side without requiring accounts. \\
+\hline
+Backend & Node.js, Express.js & API routing, badge issuance, and event logging infrastructure. \\
+\hline
+Badge API & Open Badge Factory (OBF) & Issue verifiable Open Badges using the Mozilla Open Badge standard. \\
+\hline
+Hosting & Netlify (frontend), Render (backend) & Free-tier deployment of static site and paid-tier backend services. \\
+\hline
+Version Control & Git, GitHub & Source control and collaboration throughout development. \\
+\hline
+Analytics & Custom event logger (JavaScript) & Capture interaction logs and user task progress anonymously. \\
+\hline
+\end{tabularx}
+\label{tab:tech_stack}
+\end{table}
+ {\raggedright \small{Source: compiled by the author}\par}
+
+Important to mention that the final set of tasks given to the user on the website is the following:
+\begin{itemize}
+    \item Card Classification.
+    \item Element selection.
+    \item Scenario selection.
+    \item Item combination.
+    \item Card association.
+\end{itemize}
 
 \subsection{Frontend Architecture and Technologies}
 

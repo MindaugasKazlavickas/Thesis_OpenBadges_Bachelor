@@ -16,7 +16,7 @@ The evaluation was based on two core data streams:
     \end{itemize}
     \item \textbf{Post-Session Survey:} After completing the tasks, users were prompted to complete a structured survey comprising 8 statements for numeric answers and a set of required and optional questions with written answers. 
     Ratings were on a 4-point Likert scale (1 = strongly disagree, 4 = strongly agree). 
-    This forced users to pick a neutral stance. 
+    This forced users to pick a stance that would not be neutral. 
     The questions were grouped into three thematic categories:
     \begin{itemize}
         \item \textbf{Gamification}: Measured the motivational effectiveness of game-like elements.
@@ -38,15 +38,16 @@ The survey questions with numeric answers were the following:
         \item I understand what the issued badge represents and how it could be used.
 \end{itemize}
 
-Below is the list of written feedback questions that the participants also had the option to leave, which was collected to supplement quantitative findings.
+Below is the list of written feedback questions that the participants also had the option to or had to leave, which was collected to supplement quantitative findings.
 \begin{itemize}
         \item Which task or activity did you find the most useful or engaging for understanding Open Badges? Why?
         \item Which task or activity was the least helpful or enjoyable? Why?
         \item Did the interactive elements ever confuse or distract you from the learning content?
         \item If you answered "Yes" in the previous question, please describe what confused or distracted you, and why.
         \item Did the progression system (unlocking sections as you go) help or hinder your learning experience?
-        \item Any other comments, suggestions, or technical issues you encountered?
 \end{itemize}
+
+The final number of participants in the data collection is 9.
 
 \subsubsection{Technical Stack and Tooling}
 
@@ -87,20 +88,20 @@ Several patterns emerged:
         \begin{itemize}
             \item It had the lowest accuracy (mean = 0.51),
             \item The highest average time per task (42.09s),
-            \item And a notably high incorrect-to-correct ratio, as seen in the chart \ref{fig:corr_incorr}. 
+            \item And a notably high incorrect-to-correct ratio, as seen in Figure \ref{fig:corr_incorr}\footnote{The table displays the average correct and incorrect answers by all users. All users had to answer all of the questions correctly, so the average correct answers is static across all attempts.}. 
             The task was unique in the way that the users were able to fail twice before discovering the correct answer, if attempted way to complete it was to guess the answer. 
             This made it the most punishing task, suggesting cognitive overload or design ambiguity that warrants a review of either instructional clarity or task mechanics. 
-            This is corroborated by the written responses regarding the questions within the task being slightly too vague, which caused mild frustration to users. 
-            This is further supported by Figure \ref{fig:acc}, where the task, while it has the longest average time per attempt, also holds the lowest accuracy. 
-            This implies that additional time in this task did not yield better outcomes.
-        \end{itemize}
-        \begin{figure}[hbtp]
+            \begin{figure}[hbtp]
         \centering
         \includegraphics[width=0.8\textwidth]{figures/mean_correct_incorrect.png}
-        \caption{Average Correct Vs Incorrect aggregations per task}
+        \caption{Average Correct Vs Incorrect answer aggregations per task by all users}
         \label{fig:corr_incorr}
         {\raggedright \small{Source: created by the author based on project data}\par}
-        \end{figure}
+\end{figure}
+            \item This is corroborated by the written responses regarding the questions within the task being slightly too vague, which caused mild frustration to users. 
+            \item This is further supported by Figure \ref{fig:acc}, where the task, while it has the longest average time per attempt, also holds the lowest accuracy. 
+            This implies that additional time in this task did not yield better outcomes.
+        \end{itemize}
         \item Tasks 1 and 2 showed intermediate difficulty, with Task 1 offering higher accuracy and slightly longer average time. 
         Task 2 showed many more incorrect attempts on average than Task 1. 
         Notably, Task 1 handles a very familiar topic to most people ("hard" and "soft" skills), in comparison to Task 2, which is about metadata. 
@@ -127,6 +128,10 @@ Std. Time (s)      & 8.549135 & 29.238296 & 39.153163 & 0.981814 & 12.770451 \\
 \label{tab:task_summary_vertical}
 \end{table}
 {\raggedright \small{Source: based on results from author's implementation}\par}
+\begin{flushleft}
+\textsuperscript{†}\textit{Note: All tasks required users to eventually select the correct answer before they could proceed. The "Avg. Total Attempts" metric reflects total interactions needed to reach completion, which may exceed the number of correct options in each task. For example, Task 1 had 8 cards to sort, but users averaged 9.14 attempts. The minimums were 8, 6, 3, 3 and 6 respectively for each task. Therefore, "Accuracy" here represents a ratio of correct responses to total attempts, not a pass/fail score.}
+\end{flushleft}
+
 
 \begin{figure}[hbtp]
 \centering
