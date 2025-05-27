@@ -1,31 +1,33 @@
-\section{TECHNOLOGY REVIEW}
-
-To achieve the goal of the work, necessary design, gamification and game elements have to be identified, to develop an educational website that applies gamification principles to teach and drive recognition for open badges. 
+\section{Design Strategy and Comparative Review}
+To achieve the goal of developing an educational website that applies gamification principles to teach and promote recognition of open badges, this section is concerned with exploring design strategies, gamified elements, and supporting technologies.
 While there is no exact example in the industry to follow for achieving this task, existing solutions of education and gamification applied in learning, digital badge systems will be reviewed, highlighting their core gamification features, similarities, and theories applied.
 
-To develop the task, technology and software solutions will be reviewed for the website. 
-Finally, the completion of the website's content is intended to reward the user with an open badge of their own. 
-This means that an open badge creation pipeline solution has to be explored, alongside metadata creation and its content to provide the website users with a token of verifiable completion that can be interoperably used across the Web.
+In addition to comparative analysis, this section examines layout logic, task design, and motivational models to inform the structure of the user experience. 
+This includes a focus on layout and element design choices that prioritise clarity, responsiveness, and pedagogical intent, ensuring each interface component supports user engagement, progression, and learning outcomes.
+
+Finally, software and technological tools are reviewed to support the implementation of verifiable badge issuance, ensuring that users who complete the website receive an open badge encoded with international metadata standards for recognition across the Web.
 
 \subsection{Review of Existing Similar Solutions}
-Existing similar solutions will be reviewed to identify key features, gamified elements, and theoretical strategies relevant to designing them. For the purposes of the project, the only concern is with educational, gamification and open badge integrations. 
+Existing similar solutions will be reviewed to identify key features, gamified elements, and theoretical strategies relevant to designing them. 
+For the purposes of the project, the only concern is with educational, gamification and open badge integrations. 
 The analysis will focus on platforms utilizing features such as badges, progress tracking, and leaderboards and the approach to their design to identify key elements and features to be implemented. 
 To provide depth, theoretical frameworks like \acrshort{sdt}, \acrshort{mda} Framework, flow theory and alternative approaches will be explored in their application to these platforms. 
-This review will adopt a comparative analysis approach, organizing findings into four core criteria: platform name, gamification approach and features, theoretical foundations or strategies applied, and relevance to project goals. 
+This review will adopt a comparative analysis approach, organizing findings into four core parameters: platform name, gamification approach and features, theoretical foundations or strategies applied, and relevance to project goals. 
 Aspects like Target Audience, Accessibility, strengths and weaknesses as well as many other potential outlines will be ignored due to being considered out-of-scope for the project. 
 Additionally, the selected products and services to-be-reviewed vary significantly in scope and application, so expanding the set of criteria to evaluate would lead to misrepresentation of certain criteria aspects.
-By examining how these solutions address engagement and skill recognition, the review aims to conclude elements and strategies to inform the design of a gamified educational website about open badges.
+By examining how these solutions address engagement and skill recognition, the review aims to conclude elements and strategies to inform the design of a gamified educational website about open badges. 
+The following Table Parameters have been chosen:
 
-Chart Criteria
 \begin{itemize}
     \item \textbf{Platform Name and Type}:  Identity of the tool or platform and the type it represents.
     \item \textbf{Gamification and Features}:  Highlight applied game elements such as badges, leaderboards, progress tracking. Additional features, most notably open badge support and creation.
     \item \textbf{Theoretical Foundations or Strategies Applied}:  Examine the applied academic or practical design principles used to develop the features, to ensure evidence-based practices.
-    \item \textbf{Relevance to Project Goals}: Explore relevance of application to the work, specifically in the field of recognition of achievement, recognition and integration of open badges. This ensures that actionable features and strategies are identified.
+    \item \textbf{Relevance to Project Goals}: Explore relevance of application to the work, specifically in the field of recognition of achievement, recognition and integration of open badges. 
+    This ensures that actionable features and strategies are identified.
 \end{itemize}
 
 
-\begin{longtable}[c]{|p{3cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\begin{longtable}[c]{|p{2.5cm}|p{4cm}|p{4cm}|p{4cm}|}
 \captionsetup{justification=raggedright, singlelinecheck=false}
 \caption{Comparative Analysis of Existing Platforms} \\
 \hline
@@ -61,37 +63,47 @@ Chart Criteria
 
 Platforms Mozilla Open Badges, and Open Badge Factory, which provide standardized badge creation and management systems are both viable options for issuing the work-related open badges for the purposes of the project. 
 Badgr seems like a great addition that could go on to improve the experience with simple extra digital badges to explain the difference between digital and open badges. 
-These systems align with the goal of the project for open recognition of the final badge and digital achievement recognition.
+These systems align with the goal of the project for open recognition of the final badge and digital achievement recognition. 
+Notably, research during development showed that Badgr is not a viable option due to technical limitations for badge issuing.
 
 Gamified applications like Duolingo, Classcraft, and Habitica are focused on incorporating interactive elements such as streaks, quests, progress trackers and experience points to motivate users. 
 By applying \acrshort{sdt}, these platforms effectively enhance intrinsic motivation through autonomy and competence (\cite{sdt}). 
 Their emphasis on visual progress tracking and driving engagement highlights the importance of user-friendly interfaces for sustained participation. 
-Duolingo’s gamified elements have been shown to increase user engagement and retention rates significantly.
+Duolingo’s gamified elements have been shown to increase user engagement and retention rates significantly according to Medium.com \footnote{https://medium.com/@theniteshknows/how-duolingo-reignited-user-growth-a-masterclass-in-gamification-strategy-2bc2d40e1876}.
 
 Educational platforms Khan Academy and Coursera have developed personalized learning paths, mastery-based progress tracking, and social learning. 
 These features are rooted in mastery learning, constructivist approaches, and active learning principles, which suggests the importance of personalized educational experiences that balance challenge and skill to maintain user engagement, per the flow theory (\cite{flow}, \cite{powerFeedback}). 
-Unfortunately, personalizing learning paths and creating extensive social learning opportunities would not be viable for the project due to being considered out-of-scope for both aspects. 
-Kahoot! and Classcraft emphasize collaborative and competitive learning, team-based interactions and real-time participation to encourage both individual and group achievements. 
+Unfortunately, personalising learning paths and creating extensive social learning opportunities would not be viable for the project due to limited scope and feasibility for both aspects. 
+Kahoot! and Classcraft emphasise collaborative and competitive learning, team-based interactions and real-time participation to encourage both individual and group achievements. 
 While team-based interactions are also considered out-of-scope for the project, there is the opportunity to implement the playfulness of presenting educational content like they are done in both of these platforms to improve the user experience.
 
+These platforms illustrate a range of strategies that can inform decisions in both the design and technical implementation phases. 
 Overall, the findings suggest that combining the structured credentialing of open badge systems with the engaging, user-centric design of gamified platforms can create an intuitive framework for motivated learning. 
 These strategies and practical insights will serve as the foundation for designing an educational platform that integrates gamification and achievement recognition to drive both user engagement and educational outcomes.
 
-\subsection{Technology Review}
+\subsection{Gamification Frameworks and Applied Design Principles}
+A growing number of educational platforms use gamification principles not only to attract attention but also to maintain engagement and reinforce learning outcomes. 
+Progression systems and in-platform economies, as seen in platforms like "Cookie Clicker", demonstrate how users can be motivated to return through continuous visual and reward-based feedback over long periods. 
+Although such systems originate in entertainment-focused products, their structural logic has informed many educational platforms by promoting retention through incremental achievements.
 
-\begin{enumerate}
-  \addtolength{\itemsep}{-0.5\baselineskip} 
-  \item {Gamification and Motivation.} \acrshort{sdt}, flow theory and \acrshort{mda} will be applied for the design of the gamified website, in the forms of progress tracking, leaderboard (completion time) and rewards (the digital and open badges)(\cite{sdt}, \cite{flow}).
-  \item {Open Badges and Digital Credentialing.} Digital badges will be created and issued using international metadata standards outlined by the Mozilla Open Badges. 
-  A pursuit to create them through automatic means will then be made, whether with one of the available tools (Mozilla Open Badges, Badgr, Open Badge Factory).
-  \item {User Experience and Interface Design.} A user interface will be implemented for user flow and driving user engagement. 
-  The standard goal for the user interface will be a successful application of \acrshort{fbm} (\cite{fogg}), which is focused on three key factors: motivation, ability and triggers. 
-  Simplicity is crucial to \acrshort{fbm}  to reduce friction and drive user engagement. 
-  To further illustrate this, Figure \ref{fig:foggChart} \footnote{https://behaviormodel.org/} shows that specifically a balance of the three barriers is necessary. 
-  So by making the platform more approachable and visually appealing, minimising barriers and using user-centric design, it is possible to improve learning follow-through.
-  \item {Responsive Web Design.} The website will be designed mobile-first with relevant principles, as that is where most people are likely to experience the content according to \textcite{mobileDesign}. 
-\end{enumerate}
+Research and industry commentary, such as a blog by \textcite{UXdesign}, emphasize the role of gamification in improving user experience and driving repeat interaction in digital learning environments. 
+Browser-based educational tools like "Prodigy" successfully use rewards and incremental task-based challenges to engage younger audiences, demonstrating the power of good pacing in content releases.
 
+Some early examples, such as Facebook-native games like "Farmville", were built primarily for keeping users terminally online as long as possible to maximise ad-revenue rather than have instructional value. 
+These methods for sustaining engagement have influenced broader web development practices in terms of visual progression, feedback timing, and session structuring.
+
+These patterns indicate that gamified educational platforms benefit most from clearly segmented user journeys with task-based progression, consistent feedback, and visible performance tracking. 
+As supported by studies on digital engagement (\cite{userEngagement}, \cite{gamificationEngagement}), these features contribute to user motivation and platform familiarity. 
+
+For this project, such implications informed the decision to implement a point-based task structure, sequential progression, and feedback mechanisms based on established gamification frameworks. 
+The design aligns with the \acrshort{mda} framework by integrating game mechanics (task rules), dynamics (user interaction over time), and aesthetics (emotional feedback from scoring and badges). 
+In parallel, \acrshort{sdt} (Self-Determination Theory) guided the structure toward autonomy and competence, while flow theory ensured tasks remained balanced in challenge and engagement (\cite{sdt}, \cite{flow}). 
+These models collectively shaped the platform's reward logic and interaction flow. 
+
+Beyond game design theories, the Fogg Behavior Model (\acrshort{fbm}) was also used to inform interface logic and user flow. 
+FBM emphasizes the relationship between motivation, ability, and triggers (\cite{fogg}), suggesting that action occurs when users are sufficiently motivated, capable, and prompted at the right time. 
+It also suggests that the challenge provided to the user has to progressively increase alongside the user's familiarity and knowledge of the challenge. 
+A visual representation of the model is shown in Figure \ref{fig:foggChart}, illustrating the balance required for effective user engagement.
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=14cm]{Media/Fogg-Behavior-Model.jpg}
@@ -100,106 +112,144 @@ These strategies and practical insights will serve as the foundation for designi
  {\raggedright \small{Source:} behaviormodel.org, 2009\par}
 \end{figure}
 
-\subsection{Website Characteristics Review}
+\subsection{Layout and User Flow Decisions}
+In the early design phase of the gamified educational website, low-fidelity wireframe designs were created to explore potential layout logic, user interaction flow and screen constraints, specifically for a mobile-first layout. 
+These initial prototypes were primarily created in Figma, with mockups representing individual screen states across the core gamified tasks, such as the one shown in Figure \ref {fig:mockups}. 
+Wireframes played a crucial role in identifying key user interface (UI) elements, narrative progression elements, and ensuring functional zones and compatibility for gamified interaction.
 
-\begin{enumerate}
-    \item \textbf{User Engagement and Motivation:} 
-    \begin{itemize}
-        \item \textbf{Gamified Elements.}
-        \begin{itemize}
-            \item Progress bars and trackers. Progress trackers will be visible within tasks and between them so that users can clearly understand their current state and progress. 
-            This will be implemented selectively for each task given to the user.
-            \item Score system. Users will gain and lose points based on their performance, which will be submitted as part of their badge criteria.
-            This will incentivize better analysis of the provided reading materials.
-            \item Feedback system. Users have to be informed of website limitations. 
-            Since the system will be on-rails, feedback will be provided, if the user attempts to access a lesson they do not yet have access to.
-            \item Rewards. Digital and Open badges will be rewarded along the way, so the user feels rewarded for their efforts.
-        \end{itemize}
-        \item \textbf{User-Centric Design.}
-        \begin{itemize}
-            \item Simple layout with minimal visual elements, that streamlines the experience.
-            \item Strict on-rails experience that should lead to higher completion rates of the lessons.
-        \end{itemize}
-        \item \textbf{Immediate Feedback.}
-        \begin{itemize}
-            \item Quick-paced tasks with real-time responses to user actions.
-            \item Responsive tasks with direct and specific feedback regarding wrong options.
-        \end{itemize}
-    \end{itemize}
-    % -----------------------------------------------------------
-    \item \textbf{Educational Effectiveness:}
-    \begin{itemize}
-        \item \textbf{Interactive Learning.} Each lesson module will feature interactive quizzes designed to test knowledge and introduce new information.
-        \item \textbf{Scenario-Based Learning.} Lessons will be related to real-world scenarios that require users to make choices or solve problems, keeping the learning process dynamic and engaging.
-        \item \textbf{Onboarding and Tooltips.} The website will include tooltips and minimal onboarding to guide the user, further reducing learning friction.
-    \end{itemize}
-    % -----------------------------------------------------------
-    \item \textbf{Design Choices:}
-    \begin{itemize}
-        \item \textbf{Language.} The website will be localized entirely in Lithuanian and in English.
-        \item \textbf{Animations.}
-        \begin{itemize}
-            \item Welcome animation. Upon landing on the website, users will see minimal animations to drive engagement. 
-            In the final implementation, text is animated in a guiding arrow position to the "Start" button.
-            The introduction area explaining the value of badges and their role in the learning process is accompanied by SVG animations that guide the user through the introductory process with the website. 
-            This will immediately engage users and explain the educational context.
-            \item Animation of badges combining. To be played to explain a certain aspect of open badges.
-            \item Animations will be achieved both via direct code and creation through alternative applications, such as Adobe AE.
-        \end{itemize}
-        \item \textbf{Badge Collection.} Earned badges will be sent to the user via email and saved in a system for later access. 
-        The user has to claim the badge from within the email they receive after entering their details in the form on the website.
-    \end{itemize}
-    % -----------------------------------------------------------
-    \item \textbf{Design Elements:}
-    \begin{itemize}
-        \item \textbf{Colors.} A clean and strict, institutional color palette will be used to enhance the visual appeal.
-            \begin{itemize}
-            \item Blue and white are likely guaranteed colors due to the association to the university's open badge system color scheme. 
-            \item Red and green will be used for correctness and error display.
-            \item Yellow will be used as a \acrshort{cta} prompting the user with the necessary next steps on the website.
-            \end{itemize}
-        \item \textbf{Art.} The website is planned to utilize primarily vector art.
-        \item \textbf{Typography.} 
-            \begin{itemize}
-            \item Simple, sans-serif fonts will be used for readability. 
-            \item The main body text will be light. 
-            \item Headings will be bold to create a visual hierarchy.
-            \end{itemize}
-        \item \textbf{Visual Elements.} Icons will be used throughout the platform to represent different badges, that will be either taken from or based on the Vilnius Tech Open Badge system's badges.
-    \end{itemize}
-\end{enumerate}
-%
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Media/design1.png}
+    \caption{Task 1: Metadata selection}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Media/design2.png}
+    \caption{Task 2: Scenario choice}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Media/design3.png}
+    \caption{Task 3: Meta badge creation}
+  \end{subfigure}
+  \caption{Mobile UI mockups showing key gamified tasks}
+  \label{fig:mockups}
+  {\raggedright \small{Source:} created by the author\par}
+\end{figure}
 
-\subsection{Software Solution Review}
-%
-The list of software implies that the software may be applied either in combination or by selection, and alternative options may be considered during development.\\
-%
+The overall layout of the gamified website was designed to support focused, step-by-step learning with minimal distraction. 
+Some of the decisions were due to technical reasons; others, like a one-page structure, were product requirements specified by the supervisor.
+Each design decision is made with the goal to emphasise clarity, responsiveness, and gamified interactivity, aligning both with pedagogical goals and user experience standards.
+
+\subsubsection{Detailed Design Decisions}
 
 \begin{itemize}
-    
-    \item \textbf{Web Technologies:} 
-    \begin{itemize}
-        \item HTML5, CSS3, and JavaScript: Core technologies for building a responsive and engaging frontend, ensuring cross-browser compatibility and user interaction independent of platform of choice.
-        \item Node.js with Express: Efficient and scalable backend development API for handling data, user authentication and game logic.
-    \end{itemize}
-    
-    \item \textbf{API Integrations:}
-    \begin{itemize}
-        \item Open Badge Standard APIs: Facilitates seamless badge issuance, verification, and sharing.
-        \item Open Badge Factory API: For badge creation, maintenance and delivery via email.
-    \end{itemize}
-    
-    \item \textbf{Example Software Solution:}
-    \begin{itemize}
-        \item React.js: A robust framework for building dynamic, modular, and responsive user interfaces.
-        \item Node.js/Express: Manages server-side logic, API endpoints, and business processes.
-        \item Git CI/CD Tools: Automates testing and deployment processes for consistent and reliable updates.
-    \end{itemize}
-    
-    \item \textbf{Other Tools and Considerations:}
-    \begin{itemize}
-        \item Version Control: Git for collaborative development and version tracking.
-        \item Testing Frameworks: Jest or Mocha for unit testing frontend and backend components.
-        \item Accessibility Testing will be considered: Lighthouse or Axe tools to ensure compliance with accessibility standards (e.g., WCAG).
-    \end{itemize}
+    \item \textbf{One-Page Scrollable Structure}: The website is planned to be a single scrollable page to maintain narrative continuity and reduce navigation complexity. 
+    This promotes immersion by guiding users through a structured sequence without requiring manual or automatic page changes and allows for a strictly guided experience. 
+    It also allows for lazy loading\footnote{A form of pre-loading where the website is instructed to load resources only when extra throughput is available and the core elements that the user is viewing are already loaded.} of visual elements such as the merge animation video that improves the stability and performance of the website. 
+    Additionally, it is one of the initial requirements set for the project. 
+    \item \textbf{Scroll Snapping Between Sections}: A series of anchor systems and respective elements were designed alongside a set of buttons to scroll between them. 
+    In essence, each section holds an anchor <div> vertical element of the size of 1 pixel with respective offsets. 
+    Each task has a button that either aligns the task to fill up the screen fully and consistently for the user or aligns the content for more comfortable reading. 
+    It will work in each task individually, but there are additional buttons that help traverse sections at the start and end of the website. 
+    This technique reinforces the concept of discrete “levels” or learning stages and prevents partial, out-of-context views of adjacent sections. 
+    A post-development note is that scroll snapping was explored in-depth, and originally it was intended to lock the full website in scroll-snapping motion, but further investigation led to poor performance for either mobile or desktop users. 
+    While the website is intended as mobile-first, creating a poor experience for the rest of the users is not viable or reasonable here and so a fraction of the intended solution has been implemented instead.
+    \item \textbf{Task-Based Segmentation}: Content is divided into modular, self-contained tasks, each with its own interactive mechanics and feedback. 
+    This segmentation mirrors gamification principles, providing a clear sense of progress and achievement at each step. 
+    It functions as a level-based system that the user gets to progress through.
+    \item \textbf{Mobile-First Responsive Layout}: The interface will be designed from the beginning to function on small screens, due to around 70\% of websites today being viewed on a mobile device according to Research.com \footnote{https://research.com/software/guides/mobile-vs-desktop-usage}. 
+    Interactive elements have to be touch-optimised, which is discussed later in more detail. 
+    Additionally, elements are vertically stacked and dynamically scaled, ensuring usability across a range of devices.
+    \item \textbf{Colour-Guided Interactivity}:  The interface uses distinct colour signals (deep blue, yellow, green/red) to distinguish structural elements, guide attention, and provide immediate correctness feedback, supporting an intuitive, quick, comprehensible, and accessible user experience.
+    \item \textbf{Integrated Feedback and Visual Cues}:  Feedback mechanisms such as visual popups, overlays, task completion percentages, score increases or decreases, animation effects and visual flair are embedded into the layout in ways to empower the user and respectively guide them through the experience. 
+    These reinforce user actions and promote continued engagement.
+    \item \textbf{Content Locking and Sequential Unlocking}:  Later sections of the website remain inaccessible until previous tasks are completed, reinforcing a mastery-based progression model. 
+    This prevents skimming or skipping ahead and encourages focused engagement with each concept. 
 \end{itemize}
+
+\subsection{Element Design}
+The design of individual interface elements throughout the website was primarily function-driven, where aesthetic decisions are made to support clarity, usability, and user feedback. 
+Colours, shapes, and placements are selected not for ornamentation but to reinforce interaction goals, task structure, and user guidance. 
+Typography is deliberately left minimal, relying on system defaults for simplicity and consistency across devices.
+
+The visual identity of the website was structured to align with the university's branding while enhancing usability through consistent colour coding. 
+Deep blue serves as the primary institutional theme colour, providing structural consistency across navigation, section headers, and tasks. 
+Yellow is used as an accent to direct attention, applied to call-to-action, or \acrshort{cta} buttons and instructional highlights such as task descriptions, or form submission and website reset buttons. 
+As an established interface design principle, green and red is used to indicate task correctness for immediate, intuitive feedback to learners. 
+This structured use of colour reduces cognitive load and reinforces motivation by making task outcomes clear.
+
+Elements are laid out in a vertically stacked structure, optimised for mobile interaction, with touch-friendly zones, consistent padding to ensure accessibility across devices. 
+These spatial choices are supported by scroll-activated features, such as an animated Scalable Vector Graphics, or \acrshort{svg} zigzag path that is present within the introductory section and progressive unlocking of tasks, that visually signal user advancement. 
+Conversely, a website reset is available after completion, which triggers a complete fadeout upon resetting user progress, to better convey the outcome. 
+These mechanisms are designed not merely for aesthetics but to support learner motivation and focus, aligning with gamification principles that emphasise immediate, goal-oriented feedback as defined by \cite{redefinition}.
+
+Buttons are styled using a visual hierarchy based on their function. 
+Primary actions, such as progressing through tasks or claiming a badge, are styled as yellow, circular buttons, ensuring high contrast and immediate visibility. 
+These stand in contrast to outlined or subdued secondary buttons in deep blue, which are used for auxiliary navigation within tasks or task buttons themselves. 
+This hierarchy reduces the likelihood of user confusion and subtly guides attention toward key learning actions.
+
+Interactive zones within tasks are also shaped by their function. 
+For example, drag-and-drop areas are outlined with dashed or shaded containers to suggest manipulability, while static information zones are clean and visually neutral. 
+Pop-up feedback components, such as correction prompts or success confirmations, follow a consistent form with a lightly elevated overlay with clear textual content and contextual visual cues. 
+These design elements help distinguish between active, passive, and reactive interface components, enhancing overall clarity.
+
+Finally, the visual hierarchy of the system is intentionally kept thin. 
+Task screens aim to present no more than two or three levels of importance at any time (e.g., a task prompt and an interaction area, optional tooltip). 
+This supports cognitive load minimisation and aligns with pedagogical priorities, critical in gamified learning contexts where distraction can reduce instructional effectiveness (\cite{reduceDistraction}).
+
+\subsection{Pedagogical Strategies and Task Design}
+The website was designed with the goal to maintain user motivation, support meaningful engagement, and deliver instruction through concise, interactive segments. 
+Gamification principles outlined previously were integrated to reinforce motivation and progression, while educational effectiveness was achieved through a structured set of tasks, each emphasising a distinct learning objective.
+
+To encourage continuous engagement, the platform includes gamified components such as progress tracking, a point-based scoring system, and a feedback loop. 
+Progress bars appear within tasks where necessary, providing a visual sense of advancement. 
+The scoring system rewards correct answers and penalises incorrect ones, with scores later submitted as part of the badge qualification process in the form of criteria, incentivising focused attention on the provided learning materials. 
+Users also receive feedback in the form of overlay notifications if they attempt to access locked content before completing prior steps, reinforcing the structured, on-rails experience.
+
+The learning journey is organised into five distinct task types, each tailored to test and reinforce different aspects of the open badge concept:
+\begin{itemize}
+    \item \textbf{Card Classification:} Categorizes competencies into hard and soft skills, with the strict association between open badges and soft skill competencies.
+    \item \textbf{Element Selection:} Involves choosing correct badge metadata from visual options.
+    \item \textbf{Scenario Selection:} Challenges users to apply badge knowledge to realistic decision-making contexts.
+    \item \textbf{Item Combination:} Visually demonstrates the concept of combining badges into a larger "Meta" badge of a different badge class.
+    \item \textbf{Card Association:} Requires categorising cards with the relevant stakeholder benefiting from the outlined concept.
+\end{itemize}
+
+To reduce onboarding friction, minimal guidance is provided via tooltips and progressive task visibility. 
+Scenario-based interactions and interactive quizzes are used to convey concepts dynamically, mirroring real-world applications of open badges and encouraging decision-based learning. 
+
+Supporting features such as SVG animations, visual cues are included to aid navigation and provide a smooth, intuitive experience. 
+The platform is localised in both Lithuanian and English to improve accessibility. 
+Additionally, earned badges are distributed via email and must be actively claimed by the user, reinforcing the reward structure and providing a tangible outcome to the learning process.
+
+As a final reinforcement mechanism, users receive an open badge upon completing the full learning sequence. 
+These badges are issued in compliance with international metadata standards, ensuring they carry both symbolic and verifiable value. 
+The ability to export and share these credentials adds an extrinsic motivational layer, encouraging learners to complete the content not only for the experience itself but also for a transferable proof of achievement. 
+This aligns with trends in microcredentialing and digital recognition in education.
+
+\subsection{Software Solution Review}
+
+When planning the required technologies that could support both the pedagogical and gamified goals of the project, rather than committing to fixed tools from the outset, the software solution review focused on tool categories and their ability to meet responsiveness, interactivity, and credentialing requirements.
+
+Several web development technologies were considered for frontend design, including component-based frameworks such as React.js, due to their flexibility in building modular and dynamic user interfaces. 
+Backend considerations focused on scalability and ease of API integration, especially for badge issuance and event tracking, leading to the selection of lightweight Node.js-based frameworks.
+
+API integrations supporting the Open Badge standard were explored, with services like Open Badge Factory offering reliable support for metadata-rich badge issuance and delivery workflows.
+Vilnius Tech's open badge provider badgecraft.eu and Badgr were also considered but were not viable during development due to certain technical constraints. 
+Technical constraints include but were not limited to deprecated API access or missing API functionality.
+For future implementation into the university's ecosystem, some adjustments are planned and would have to be made to fully function.
+
+Browser-game engine Phaser 3 was considered for game creation, to have the users get involved even further, through quick and simple game sequences. 
+This could range from online team-play to guiding users through learning new concepts about open badges.
+
+Other auxiliary tools such as Git for version control, Jest for testing, and Lighthouse for accessibility review were also evaluated to ensure development best practices were met.
+
+The final technology stack is presented in Section 3, including specific roles and deployment considerations.
+
+\subsection{Design Strategy Summary}
+This section outlined the comparative foundation and design rationale behind the development of the gamified educational website focused on open badge recognition. 
+Existing platforms were analysed for their gamification features and educational strategies, providing theoretical grounding through models such as \acrshort{sdt}, \acrshort{mda}, flow theory, and the Fogg Behavior Model. 
+These insights informed both layout and interface design choices, which emphasize mobile-first usability, interactivity, and feedback-driven progression. 
+Each task was crafted to align pedagogical intent with motivational mechanics, culminating in the issuance of a verifiable open badge. Finally, appropriate technologies and tools were considered to support modular development, badge integration, and responsive delivery, setting the groundwork for the programming phase discussed in the following section.

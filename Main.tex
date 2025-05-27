@@ -16,6 +16,7 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \usepackage{graphicx}                  % grafinių failų įterpimas ir kiti nustatymai
+\usepackage{pdfpages}
 \usepackage{booktabs}                  % reikalingas tvarkingoms lentelėms sudaryti
 \usepackage{caption}                   % paveiksliukų ir lentelių užrašų formavimas
 \usepackage{geometry}                  % paraščių ir kitų lapo parametrų nustatymai
@@ -58,7 +59,7 @@
   \endgroup
 }
 \makeatother
-\geometry{      left = 2.5cm,          % paketo geometry parametrų nustatymai
+\geometry{      left = 3.0cm,          % paketo geometry parametrų nustatymai
                right = 2.0cm, 
                  top = 2.0cm, 
               bottom = 2.0cm
@@ -139,10 +140,16 @@
 \newpage
 % ------------------------------------------------------------------ TITULINIS --
 %
-\input{Sections/Task}
+\input{Sections/Integrity}
 \newpage
 %
-\input{Sections/Integrity}
+\input{Sections/Task_EN}
+\newpage
+\input{Sections/Task_LT}
+\newpage
+\includepdf[pages=-]{Files/annotation_en_Mindaugas.pdf}
+\newpage
+\includepdf[pages=-]{Files/annotation_lt_Mindaugas.pdf}
 \newpage
 %
 \printglossary[type=acronym, title={List of Abbreviations}] % Abbreviations
@@ -174,6 +181,7 @@
 %\phantomsection
 %\addcontentsline{toc}{section}{CONCLUSIONS}
 %
+\phantomsection
 \addcontentsline{toc}{section}{REFERENCES}
 \printbibliography[title=REFERENCES]
 \newpage

@@ -8,20 +8,20 @@
 %
 \vspace{\fill}
 %
-%\begin{flushright}
-%\parbox{6cm}{%
-%APPROVED BY\\Head of Department
-%\bigskip
-%\begin{center}
-%\hrule\medskip
-%{\footnotesize (Signature)}\\[\baselineskip]
-%\hrule\medskip
-%{\footnotesize (Name, Surname)}\\[\baselineskip]
-%\hrule\medskip
-%{\footnotesize (Date)}
-%\end{center}
-%}
-%\end{flushright}
+\begin{flushright}
+\parbox{6cm}{%
+APPROVED BY\\Head of Department
+\bigskip
+\begin{center}
+\hrule\medskip
+{\footnotesize (Signature)}\\[\baselineskip]
+{Romualdas Baušys}\medskip\\
+{\footnotesize (Name, Surname)}\\[\baselineskip]
+\hrule\medskip
+{\footnotesize (Date)}
+\end{center}
+}
+\end{flushright}
 %
 \vspace{\fill}
 %
@@ -44,9 +44,12 @@ Informatics study field
 %
 \begin{flushright}
 \parbox{0.7\textwidth}{
-    \makebox[3cm][l]{\textbf{Supervisor:}}%
-    \makebox[\dimexpr0.7\textwidth-3cm\relax][l]{\hrulefill}\\
-    \hspace*{3cm}\makebox[\dimexpr0.7\textwidth-3cm\relax][c]{\scriptsize (Title, Name, Surname)}
+    \begin{tabular}{@{}l@{\hskip 0.5em}p{4cm}@{\hskip 1em}p{2cm}@{\hskip 0.5em}p{2cm}@{}}
+        \textbf{Supervisor:} & \hrulefill & \hrulefill & \hrulefill \\
+        & \centering\scriptsize (Title, Name, Surname) 
+        & \centering\scriptsize (Signature) 
+        & \centering\scriptsize (Date)
+    \end{tabular}
 }
 \end{flushright}
 %

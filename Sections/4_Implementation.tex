@@ -2,95 +2,9 @@
 
 This section presents the practical implementation of the gamified educational site designed to introduce learners to the Open Badges of the already completed project. 
 The implementation phase is meant to transfer the previously established concepts and structure into an interactive, web-based application. 
-The implementation section is concerned with reviewing the design process, approach and technical and design requirements, as well as the integration of gamification elements within the individual sections of the website. 
-Certain components of frontend and backend code and the visual elements of the website will be reviewed further in-depth. 
-Finally, technical limitations encountered during the development of the implementation will also be discussed. 
-The following are the outline of the main design steps taken throughout the project.
-
-\subsection{Layout Decisions}
-In the early design phase of the gamified educational website low-fidelity wireframe designs were created to explore potential layout logic, user interaction flow and screen constraints, specifically for a mobile-first layout. 
-These initial prototypes were developed using primarily digital mockups via the tool Figma, such as the one shown in Figure \ref {fig:mockups}, which represents a series of mobile screen layouts for each gamified task stage. 
-Wireframes played a crucial role in identifying key user interface (UI) elements, narrative progression, and functional zones for gamified interaction.
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Media/design1.png}
-    \caption{Task 1: Metadata selection}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Media/design2.png}
-    \caption{Task 2: Scenario choice}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Media/design3.png}
-    \caption{Task 3: Meta badge creation}
-  \end{subfigure}
-  \caption{Mobile UI mockups showing key gamified tasks}
-  \label{fig:mockups}
-  {\raggedright \small{Source:} created by the author\par}
-\end{figure}
-
-The overall layout of the gamified website was designed to support focused, step-by-step learning with minimal distraction. 
-Some of the decisions were due to technical reasons; others, like a one-page structure, were product requirements specified by the supervisor.
-Each design decision is made with the goal to emphasise clarity, responsiveness, and gamified interactivity, aligning both with pedagogical goals and user experience standards.
-
-\subsubsection{Detailed Design Decisions}
-
-\begin{itemize}
-    \item \textbf{One-Page Scrollable Structure}: The website is a single scrollable page to maintain narrative continuity and reduce navigation complexity. 
-    This promotes immersion by guiding users through a structured sequence without requiring manual or automatic page changes and allows for a strictly guided experience. 
-    It also allows for lazy loading\footnote{A form of pre-loading where the website is instructed to load resources only when extra throughput is available and the core elements that the user is viewing are already loaded.} of visual elements such as the merge animation video that improves the stability and performance of the website.
-    \item \textbf{Scroll Snapping Between Sections}: Scroll snapping was explored in-depth, and originally it was intended to lock the full website in scroll-snapping, but further investigation lead to poor performance for either mobile or desktop users. 
-    While the website is intended as mobile-first, creating a poor experience for the rest of the users is not viable or reasonable here, and so instead a series of anchor systems and respective elements were designed alongside a set of buttons to scroll between them. 
-    In essence, each section holds an anchor <div> vertical element of the size of 1 pixel with respective offsets. 
-    Each task has a button that either aligns the task to fill up the screen fully and consistently for the user or aligns the content for more comfortable reading. 
-    It works in each task individually, but there are additional buttons that help traverse sections at the start and end of the website. 
-    This technique reinforces the concept of discrete “levels” or learning stages and prevents partial, out-of-context views of adjacent sections.
-    \item \textbf{Task-Based Segmentation}: Content is divided into modular, self-contained tasks, each with its own interactive mechanics and feedback. 
-    This segmentation mirrors gamification principles, providing a clear sense of progress and achievement at each step. 
-    It functions as a level-based system that the user gets to progress through.
-    \item \textbf{Mobile-First Responsive Layout}: The interface was designed from the beginning to function on small screens, due to around 70\% of websites today being viewed on a mobile device according to Research.com \footnote{https://research.com/software/guides/mobile-vs-desktop-usage}. 
-    Interactive elements are touch-optimised, which is discussed later in more detail. 
-    Additionally, elements are vertically stacked, and dynamically scaled, ensuring usability across a range of devices.
-    \item \textbf{Colour-Guided Interactivity}:  The interface uses distinct colour signals (deep blue, yellow, green/red) to distinguish structural elements, guide attention, and provide immediate correctness feedback, supporting an intuitive, quick, comprehensible, and accessible user experience.
-    \item \textbf{Integrated Feedback and Visual Cues}:  Feedback mechanisms such as visual popups, overlays, task completion percentages, score increases or decreases, animation effects and visual flair such as the vertical zigzag following user-scrolling during the introduction section are embedded into the layout in ways to empower the user and respectively guide them through the experience. 
-    These reinforce user actions and promote continued engagement.
-    \item \textbf{Content Locking and Sequential Unlocking}:  Later sections remain inaccessible until previous tasks are completed, reinforcing a mastery-based progression model. 
-    This prevents skimming or skipping ahead and encourages focused engagement with each concept.
-\end{itemize}
-
-\subsection{Element Design}
-The design of individual interface elements throughout the website was primarily function-driven, where aesthetic decisions were made to support clarity, usability, and user feedback. 
-Colours, shapes, and placements were selected not for ornamentation but to reinforce interaction goals, task structure, and user guidance. 
-Typography was deliberately left minimal, relying on system defaults for simplicity and consistency across devices.
-
-The visual identity of the website was structured to align with the university's branding while enhancing usability through consistent colour coding. 
-Deep blue serves as the primary institutional theme colour, providing structural consistency across navigation, section headers, and tasks. 
-Yellow is used as an accent to direct attention, applied to call-to-action, or \acrshort{cta} buttons and instructional highlights such as task descriptions, or form submission and website reset buttons. 
-As an established interface design principle, green and red are used to indicate task correctness for immediate, intuitive feedback to learners. 
-This structured use of colour reduces cognitive load and reinforces motivation by making task outcomes clear.
-
-Elements were laid out in a vertically stacked structure, optimised for mobile interaction, with touch-friendly zones, consistent padding to ensure accessibility across devices. 
-These spatial choices were supported by scroll-activated features, such as an animated Scalable Vector Graphics, or \acrshort{svg} zigzag path and progressive unlocking of tasks, that visually signal user advancement. 
-Conversely, a website reset is available after completion, which triggers a complete fadeout upon resetting user progress, to better convey the outcome. 
-These mechanisms were designed not merely for aesthetics but to support learner motivation and focus, aligning with gamification principles that emphasise immediate, goal-oriented feedback as defined by \cite{redefinition}.
-
-Buttons were styled using a visual hierarchy based on their function. 
-Primary actions, such as progressing through tasks or claiming a badge, are styled as yellow, circular buttons, ensuring high contrast and immediate visibility. 
-These stand in contrast to outlined or subdued secondary buttons in deep blue, which are used for auxiliary navigation within tasks or task buttons themselves. 
-This hierarchy reduces the likelihood of user confusion and subtly guides attention toward key learning actions.
-
-Interactive zones within tasks were also shaped by their function. 
-For example, drag-and-drop areas are outlined with dashed or shaded containers to suggest manipulability, while static information zones are clean and visually neutral. 
-Pop-up feedback components, such as correction prompts or success confirmations, follow a consistent form with a lightly elevated overlay with clear textual content and contextual visual cues. 
-These design elements help distinguish between active, passive, and reactive interface components, enhancing overall clarity.
-
-Finally, the visual hierarchy of the system is intentionally kept thin. 
-Task screens aim to present no more than two or three levels of importance at any time (e.g., a task prompt and an interaction area, optional tooltip). 
-This supports cognitive load minimisation and aligns with pedagogical priorities, critical in gamified learning contexts where distraction can reduce instructional effectiveness (\cite{reduceDistraction}).
+The implementation process covers the programming approach, component structure, and integration of gamification logic into the functional website. 
+It includes an overview of the technology stack, the development environment, and code-level explanations of core mechanisms.
+Additionally, this section discusses encountered technical limitations, constraints, and workarounds applied during development.
 
 \subsection{Technology Stack Overview}
 
@@ -128,15 +42,6 @@ Analytics & Custom event logger (JavaScript) & Capture interaction logs and user
 \label{tab:tech_stack}
 \end{table}
  {\raggedright \small{Source: compiled by the author}\par}
-
-Important to mention that the final set of tasks given to the user on the website is the following:
-\begin{itemize}
-    \item Card Classification.
-    \item Element selection.
-    \item Scenario selection.
-    \item Item combination.
-    \item Card association.
-\end{itemize}
 
 \subsection{Frontend Architecture and Technologies}
 
@@ -551,4 +456,10 @@ Notably, drop-off points were also not investigated within the testing section a
 
 With all of the technical limitations considered, the final product was still well received and achieved the necessitated goals to an extent that will be further discussed within the testing section.
 
+\subsection{Practical Implementation Summary}
+This section detailed the technical realisation of the gamified educational website designed to teach about and promote open badges. 
+Drawing from the design principles established earlier, the implementation process translated layout logic, gamified structures, and pedagogical strategies into functional frontend and backend components. 
+Key technologies were employed to ensure responsive interaction, progressive task flow, and secure badge issuance. 
+The integration of a third-party API, particularly for open badge management, presented both opportunities and constraints, some of which required design compromises or future planning for institutional deployment. 
+This makes it a functional final programming product that is available for user testing and evaluation.
 \newpage

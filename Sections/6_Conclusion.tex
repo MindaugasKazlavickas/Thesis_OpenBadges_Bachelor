@@ -1,17 +1,27 @@
+\phantomsection
 \section*{CONCLUSIONS}
 \addcontentsline{toc}{section}{CONCLUSIONS}
 \begin{enumerate}
-    \item \textbf{Theoretical Foundations} The analysis of gamification and open badge theory provided a strong foundation for the platform’s design. 
-    The implementation successfully applied key motivational principles of \acrshort{sdt}, flow theory and \acrshort{mda}, leading to high user engagement and positive feedback in both structured tasks and open-ended responses. 
-    This theoretical grounding was essential in ensuring that gamification elements like score feedback, progression, and reward systems were meaningful and not superficial.
-    \item \textbf{Requirements and Design Specification} The functional and technical requirements identified early in the process, such as a mobile-first layout, structured task progression, and minimal cognitive friction, proved effective. 
-    The feedback and performance data indicate that the site's architecture, section flow, and interaction model met usability and accessibility expectations, particularly for the intended higher education student audience.
-    \item \textbf{Platform Development} The developed prototype successfully incorporated interactive, gamified elements that educated users about Open Badges. 
-    The sequential task design consistently improved badge literacy in a clear and engaging way, with small, gamified tasks of card sorting, item selection and card association showing good learning impact. 
-    The scenario identification task revealed issues with clarity. 
-    The overall structure demonstrated that gamification could support and even enhance educational messaging when implemented thoughtfully.
-    \item \textbf{Testing and Evaluation} The evaluation confirmed that the platform achieved its learning goals, with strong self-reported user understanding and enjoyment. 
-    The mixed performance results and feedback highlighted specific areas for refinement, most notably the clarity and structure of task 3 and badge value perception. 
+    \item \textbf{Theoretical Foundations} The literature analysis reviewed the position and relevancy of open digital badges in learning recognition. 
+    In parallel, key gamification theories were introduced and assessed, including \acrshort{sdt}, the \acrshort{mda} framework, flow theory, and \acrshort{fbm}. 
+    These foundations directly informed the decisions to structure the platform as a sequential, on-rails experience, emphasising user autonomy, competence, and timely feedback. 
+    The use of visual progress indicators, score systems, and locked content emerged from this theoretical grounding, ensuring that gamification elements would serve educational goals rather than superficial engagement.
+    \item \textbf{Design Strategy and Comparative Review} A comparative review of existing educational and gamified platforms, such as Duolingo, Khan Academy, Coursera, Mozilla Open Badges and others, revealed consistently applied strategies or game and gamified elements applied within the industry for sustaining engagement, structuring content, and delivering credential-based rewards. 
+    These findings directly informed the platform’s mobile-first, one-page layout and task-based structure. 
+    The design choices of scroll-snapped sections, touch-friendly layouts, and feedback-rich interactions were deliberately aligned with both usability principles and gamification theory, reinforcing motivation while reducing cognitive friction. 
+    Element design emphasised clarity and user intent: colour-coded feedback, progressive content unlocking, and concise and simple typography supported cognitive accessibility.
+    The implemented solutions reflect best practices drawn from both theoretical and practical analysis.
+    \item \textbf{Platform Development} The educational platform was successfully developed using React.js, Node.js, and OBF API. 
+    It integrated gamified components such as a progress bar, point-based scoring, feedback overlays, and badge issuance. 
+    Tasks were implemented as interactive modules featuring card sorting, item selection, scenario selection and card association. 
+    Technical challenges, such as API limitations with Badgr and badgecraft.eu, were overcome by switching to Open Badge Factory.
+    The full experience remained full and functional across devices, reflecting a robust implementation of the design strategy.
+    \item \textbf{Testing and Evaluation} The platform was tested with 9 users. 
+    Users completed the website experience in full and their task performance and feedback were recorded. 
+    Quantitatively, task accuracy ranged from 56\% to 100\%, or up to 88\%, if the task designed as a break is to be excluded. 
+    Task 3(scenario selection) was performed the worst, and Task 1(card classification) was performed the best by the users. 
+    Task 3 also received the most negative qualitative feedback from the survey. 
+    The evaluation confirmed that the platform achieved its learning goals, with strong self-reported user understanding and enjoyment. 
     Despite technical setbacks and a limited sample size, the testing methodology yielded actionable insights, validating both the concept and its execution while identifying concrete paths for improvement in future iterations and research.
 \end{enumerate}
 
